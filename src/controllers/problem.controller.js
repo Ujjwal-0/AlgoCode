@@ -69,7 +69,7 @@ async function deleteProblem(req,res,next){
 
 async function updateProblem(req,res,next){
     try {
-        const updatedProblem = await problemService.updateProblem(req.params.id);
+        const updatedProblem = await problemService.updateProblem(req.params.id,req.params.body);
         return res.status(StatusCodes.OK).json({
             success: true,
             message: `Succcessfully updated a problem`,
